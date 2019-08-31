@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://unpkg.com/@ionic/core@latest/css/ionic.bundle.css" />
+    <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
+    
+    <title>Jenius</title>
+</head>
+
+<body>
+    <ion-app>
+        <ion-header>
+            <ion-toolbar text-center class="background">
+                <ion-icon name="menu" size="large" slot="start"></ion-icon>
+                <ion-title>Jenius</ion-title>
+                <ion-icon name="notifications" size="large" slot="end"></ion-icon>
+            </ion-toolbar>
+        </ion-header>
+
+        <ion-content>
+            <ion-card>
+                <ion-toolbar class="text1">
+                        <ion-title slot="start">Hai, Febry</ion-title>
+                </ion-toolbar>
+            </ion-card>
+            
+            <ion-card>
+                <ion-toolbar class="text2">
+                    <ion-icon size="large" name="pie" slot="start"></ion-icon>
+                    <ion-title size="large" slot="start">Saldo Total</ion-title>
+                    <ion-title class="text1" slot="end">Rp. 185.093.984</ion-title>
+                </ion-toolbar>
+
+                <ion-slides>
+                    <ion-card class="card1">
+                        <ion-card-content class="card-content-center">
+                            <ion-icon size="large" name="flag"></ion-icon><br>
+                            <ion-text>IDR</ion-text><br>
+                            <ion-text>200.000</ion-text>
+                        </ion-card-content>
+                   </ion-card>
+
+                   <ion-card class="card1">
+                        <ion-card-content class="card-content-center">
+                            <ion-icon size="large" name="flag"></ion-icon><br>
+                            <ion-icon size="medium" name="add-circle"></ion-icon>
+                            <ion-text>USD</ion-text><br>
+                        </ion-card-content>
+                   </ion-card>
+
+                   <ion-card class="card1">
+                        <ion-card-content class="card-content-center">
+                            <ion-icon size="large" name="flag"></ion-icon><br>
+                            <ion-icon size="medium" name="add-circle"></ion-icon>
+                            <ion-text>JPY</ion-text><br>
+                        </ion-card-content>
+                   </ion-card>
+                </ion-slides>
+
+                <ion-toolbar class="text2">
+                        <ion-icon size="large" name="cash" slot="start"></ion-icon>
+                        <ion-text>Saldo Aktif</ion-text><br>
+                        <ion-text>Terhubung ke m-Card</ion-text>
+                        <ion-title class="text1" slot="end">Rp. 875.078</ion-title>
+                    </ion-toolbar>
+            </ion-card>
+
+
+            <ion-card>
+                <ion-toolbar class="text2">
+                    <ion-icon size="large" name="wallet" slot="start"></ion-icon>
+                    <ion-title size="large" slot="start">e-Wallet Center</ion-title>
+                </ion-toolbar>
+                
+                <ion-slides>
+                    <ion-card class="card1">
+                        <ion-card-content class="card-content-center">
+                            <ion-icon size="large" name="wallet"></ion-icon><br>
+                            <ion-text>XXI</ion-text>
+                        </ion-card-content>
+                    </ion-card>
+                    
+                    <ion-card class="card1">
+                            <ion-card-content class="card-content-center">
+                                <ion-icon size="large" name="wallet"></ion-icon><br>
+                                <ion-text>Go-Pay</ion-text>
+                            </ion-card-content>
+                    </ion-card>
+
+                    <ion-card class="card1">
+                            <ion-card-content class="card-content-center">
+                                <ion-icon size="large" name="wallet"></ion-icon><br>
+                                <ion-text>OVO</ion-text>
+                            </ion-card-content>
+                    </ion-card>                        
+                </ion-slides> 
+            </ion-card>
+
+            <ion-card>
+                <ion-toolbar class="text2">
+                    <ion-icon size="large" name="stats" slot="start"></ion-icon>
+                    <ion-title size="large" slot="start">In & Out</ion-title>
+                    <ion-icon size="large" name="arrow-dropright" slot="end"></ion-icon>
+                </ion-toolbar>
+
+                <ion-toolbar class="text2">
+                        <ion-icon size="large" name="contact" slot="start"></ion-icon>
+                        <ion-text>Budi Hersumawakti</ion-text><ion-text slot="primary">50.000</ion-text><ion-icon class="out" size="medium" name="trending-up" slot="end"></ion-icon><br>
+                        <ion-text>19 Januari 2019</ion-text>
+                </ion-toolbar>
+
+                <ion-toolbar class="text2">
+                        <ion-icon size="large" name="contact" slot="start"></ion-icon>
+                        <ion-text>Erica</ion-text><ion-text slot="end">450.000</ion-text><ion-icon class="in" size="medium" name="trending-down" slot="end"></ion-icon><br>
+                        <ion-text>12 Februari 2019</ion-text>
+                </ion-toolbar>
+
+                <ion-toolbar class="text2">
+                        <ion-icon size="large" name="contact" slot="start"></ion-icon>
+                        <ion-text>Marcell Olverius</ion-text><ion-text slot="end">590.000</ion-text><ion-icon class="in" size="medium" name="trending-down" slot="end"></ion-icon><br>
+                        <ion-text>21 Mei 2019</ion-text>
+                </ion-toolbar>
+
+
+            </ion-card>
+        </ion-content>
+
+        
+        
+    </ion-app>
+
+
+
+    <script src="https://unpkg.com/@ionic/core@latest/dist/ionic.js"></script>
+</body>
+
+<style>
+    .background{
+        --background : rgb(100, 149, 237);
+        --color : white;
+    }
+
+    .text1{
+        --color : rgb(100, 149, 237);
+    }
+    
+    .text2{
+        --color : black;
+    }
+
+    ion-card{
+        padding: 2%;
+    }
+
+    .card1{
+        height : 50%;
+        width  : 50%;
+    }
+
+    .card-content-center{
+        position: center;
+        text-align: center;
+        align-content: center;
+        padding: 0%;
+    }
+
+    .in{
+        color : green;
+    }
+
+    .out{
+        color : red;
+    }
+
+</style>
+
+</html>

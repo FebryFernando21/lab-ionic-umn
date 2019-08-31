@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://unpkg.com/@ionic/core@latest/css/ionic.bundle.css" />
+    <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
+    
+    <title>Tugas 1 - 13003</title>
+</head>
+
+<body>
+    <ion-app>
+        <ion-header>
+            <ion-toolbar text-center class="background">
+                <ion-title>Budget Planner</ion-title>
+            </ion-toolbar>
+        </ion-header>
+
+        <ion-content fullscreen class="ion-padding">
+            <!-- input pengeluaran -->
+            <ion-action-sheet-controller></ion-action-sheet-controller>
+            <ion-card>
+                <ion-card-header style="font-weight: bold; font-size: 25px; color: black">Input Pengeluaran</ion-card-header>
+
+                <form id="myForm" onsubmit="tambahForm(event)">
+                    <ion-item>
+                        <ion-input type="text" name="nama" placeholder="Nama Pengeluaran" oninput="handleNamaValue(event)"></ion-input>
+                    </ion-item>
+
+                    <ion-item>
+                        <ion-input type="number" name="jumlah" placeholder="Jumlah Pengeluaran" oninput="handleJumlahValue(event)"></ion-input>
+                    </ion-item>
+
+                    <ion-item>
+                        <ion-button onclick="reset(event)" fill="outline" color="danger" size="default" slot="end">
+                            <ion-icon name="close" style="padding-right: 10px"></ion-icon>
+                            Hapus
+                        </ion-button>
+
+                        <ion-button type="submit" size="default" slot="end">
+                            <ion-icon name="add" style="padding-right: 10px"></ion-icon>
+                            Tambah
+                        </ion-button>     
+                    </ion-item>
+                </form>
+            </ion-card>
+
+            <ion-list style="margin-left: 0.1cm" id="daftar_list"></ion-list>
+
+            <div style="margin-left: 0.52cm">
+                <ion-label id="total_daftar">Total Pengeluaran : Rp. 0,00</ion-label>                
+            </div>
+        </ion-content>
+    </ion-app>
+
+
+    <script src="https://unpkg.com/@ionic/core@latest/dist/ionic.js"></script>
+    <script>
+        const controller = document.querySelector('ion-alert-controller');
+        var daftar = [];
+        let nama, jumlah;
+
+        function reset(event){
+            document.getElementById("myForm").reset();
+        }
+
+        function tambahForm(event) {
+            event.preventDefault();
+            
+            daftar.push([nama,jumlah]);
+            document.getElementById("daftar_list").innerHTML += "<ion-item><ion-label>" + nama + " : Rp. " + jumlah + ",00</ion-label><ion-item>";
+            var total = 0;
+            for(var arrayIndex in daftar) {
+                total += parseInt(daftar[arrayIndex][1]);
+            }
+            document.getElementById("total_daftar").innerHTML = "Total Pengeluaran : Rp. " + total + ",00"; 
+            document.getElementById("myForm").reset();
+            nama = jumlah = "";
+        }
+
+        function handleNamaValue(event) {
+            nama = event.target.value;
+        }
+        function handleJumlahValue(event) {
+            jumlah = event.target.value;
+        }
+    </script>
+
+</body>
+
+<style>
+    .background{
+        --background: rgb(88, 88, 209);
+        color : white;
+    }
+    ion-button{
+        --border-radius: 10px;
+        height: 50px;
+    }
+
+    
+</style>
+</html>
