@@ -1,0 +1,32 @@
+<ion-app>
+  <ion-menu side="start" menuId="m1">
+    <ion-header>
+      <ion-toolbar>
+          <img src="http://www.logotypes101.com/free_vector_logo_png/117561/521D3A740A33E8B4B3036537A4ACF33C/Universitas_Multimedia_Nusantara_UMN" style="width: 8cm; height: 8cm; display: block;">
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <ion-list>
+        <ion-menu-toggle>
+          <ion-item lines="none" routerLink="home">
+            <ion-label>
+              <ion-icon name="list"></ion-icon>
+              LIST UKM
+            </ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+
+        <ion-menu-toggle>
+          <ion-item lines="none" routerLink="profile">
+            <ion-label>
+              <ion-icon name="person"></ion-icon>
+              Profile
+            </ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+
+  <ion-router-outlet main></ion-router-outlet>
+</ion-app>
